@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/grafik' element={<LineChart/>}/>
+        <Route path='/waves-5' element={<LineChart/>}/>
         <Route path='*' element={<NoRoutes/>}/>
       </Routes>
       </BrowserRouter>
