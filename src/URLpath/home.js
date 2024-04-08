@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const number = [1,2,3,4,5]
+const number = [1,2,3,4,5,6]
 const wavesTitles = number.map((value,index) => {
     let path = '/waves-'+ value.toString()
     return(
