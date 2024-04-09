@@ -1,24 +1,20 @@
-// Ini adalah file template untuk membuat tabel di HTML 
-function Tabel({Header, Data}) {
-   const mapingHeader = Header.map((value,index)=>{
-        return(<th key={index}>{value}</th>)
-    });
-   const mapingData = Data.map((row,index)=>{
-       const mapingRow = row.map((value,index) =>{
-        return (
-            <td key={index}>{value}</td>
-        )
-       })
-       return (
-        <tr key={index}>{mapingRow}</tr>
-       )
-    });
-return(
-    <table style={{border:'1px solid black'}}>
-        <thead><tr>{mapingHeader}</tr></thead>
-        <tbody>{mapingData}</tbody>
-    </table>
-)
+import Plot from "react-plotly.js";
+
+export function Plotly(){    
+    return (
+        <Plot
+        data={[
+            {
+                x: [1, 2, 3],
+                y: [2, 6, 3],
+                type: 'scatter',
+                mode: 'lines+markers',
+                marker: {color: 'red'},
+            },
+        {type: 'bar', x: [1, 2, 3], y: [2, 5, 3]},
+      ]}
+      layout={{width: 320, height: 240, title: 'A Fancy Plot'}}
+    />
+    );
 }
 
-export default Tabel

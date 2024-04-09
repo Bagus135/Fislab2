@@ -1,6 +1,5 @@
 // Ini merupakan module npm yang dibutuhkan (import module)
 import { PlotGraph, DatasetsY } from '../chartJS/chart.js';
-import Table from '../chartJS/table.js';
 var ss = require('simple-statistics');
 
 // Fungsi convert piksel
@@ -63,30 +62,33 @@ function LinearRegressionGraph(inputData, gradient, interceps){
 }
 
 // Fungsi eksekusi
-function Execution({variasi, referensi_x, referensi_y, diameter_x, diameter_y}){
+function Execution(referensi_x, referensi_y, diameter_x, diameter_y){
   const referensi_1mm = perbesaran_1mm(referensi_x,referensi_y);
   const diameterArray = perbesaran(diameter_x, diameter_y, referensi_1mm);
   const dataObjek = dataObj(diameterArray);
   const regresiLinear = LinearRegression(dataObjek.arrayMulti);
   const plotRegresi = LinearRegressionGraph(diameterArray, regresiLinear.m, regresiLinear.b);
+  return {dataObjek, regresiLinear, plotRegresi};
+};
+
+
+function Graphing({variasi, dataObjek, plotRegresi}){
+  const grafikData = DatasetsY('Udara','scatter',dataObjek.y,'blue','blue')
+  const grafikRegresi = DatasetsY('Regresi Udara','line', plotRegresi.y,'red','red')
   
-  function Graphing({variasi}){
-    const grafikData = DatasetsY('Udara','scatter',dataObjek.y,'blue','blue')
-    const grafikRegresi = DatasetsY('Regresi Udara','line', plotRegresi.y,'red','red')
-    
-    const Datasets = {
-      x : plotRegresi.x,
-      y : [grafikData,grafikRegresi]
-    }
-    console.log(Datasets.y)
-    const PlotGrafik = <PlotGraph title={variasi} datasetsX={Datasets.x} datasetsY={Datasets.y}/>
-    return  PlotGrafik
+  const Datasets = {
+    x : plotRegresi.x,
+    y : [grafikData,grafikRegresi]
   }
-  return <Graphing variasi={variasi}/>
+  console.log(Datasets.y)
+  const PlotGrafik = <PlotGraph title={variasi} datasetsX={Datasets.x} datasetsY={Datasets.y}/>
+  return  PlotGrafik
 }
 
+
 const Udara1 = ()=>{
-return (<Execution variasi= {'Grafik Udara 1'} referensi_x={2} referensi_y={4} diameter_x={[1,2,3,4,5]} diameter_y={[2,4,12,5,10]}/>)
+  return (<Execution variasi= {'Grafik Udara 1'} referensi_x={2} referensi_y={4} diameter_x={[1,2,3,4,5]} diameter_y={[2,4,12,5,10]}/>)
+
 }
 
   
