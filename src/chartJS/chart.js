@@ -1,5 +1,6 @@
 import { Chart } from 'react-chartjs-2';
-import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, Title, Legend, CategoryScale} from 'chart.js';
+import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, Title, Legend, CategoryScale} from 'chart.js/auto';
+import { type } from '@testing-library/user-event/dist/type';
 
 ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title, Legend, CategoryScale);
 
