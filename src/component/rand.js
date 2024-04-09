@@ -71,7 +71,7 @@ function Execution({variasi, referensi_x, referensi_y, diameter_x, diameter_y}){
   const plotRegresi = LinearRegressionGraph(diameterArray, regresiLinear.m, regresiLinear.b);
   
   function Graphing({variasi}){
-    const grafikData = DatasetsY('Udara','scatter',dataObjek.y,'blue','blue')
+    const grafikData = DatasetsY('Udara','line',dataObjek.y,'blue','blue')
     const grafikRegresi = DatasetsY('Regresi Udara','line', plotRegresi.y,'red','red')
     
     const Datasets = {
