@@ -2,7 +2,7 @@ import './App.css';
 import NoRoutes from './URLpath/noRoute';
 import Home from './URLpath/home';
 import Tabel from './chartJS/table';
-import LineChart from './chartJS/chart';
+import Udara1 from './component/rand';
 import { Route, Routes, BrowserRouter} from 'react-router-dom';
 
 function ABC(){
@@ -16,8 +16,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/waves-5' element={<LineChart/>}/>
-        <Route path='/waves-4' element={<ABC/>}/>
+        <Route path='/waves-5' element={<Udara1/>}/>
         <Route path='*' element={<NoRoutes/>}/>
       </Routes>
       </BrowserRouter>
