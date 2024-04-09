@@ -1,7 +1,7 @@
 import { Chart } from 'react-chartjs-2';
-import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, Title } from 'chart.js';
+import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, Title, CategoryScale} from 'chart.js';
 
-ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title);
+ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title, CategoryScale);
 
 
 const LineChart = () => {
