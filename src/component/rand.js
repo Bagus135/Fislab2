@@ -68,15 +68,15 @@ function Execution({variasi, referensi_x, referensi_y, diameter_x, diameter_y}){
   const diameterArray = perbesaran(diameter_x, diameter_y, referensi_1mm);
   const dataObjek = dataObj(diameterArray);
   const regresiLinear = LinearRegression(dataObjek.arrayMulti);
-  const grafikRegresi = LinearRegressionGraph(diameterArray, regresiLinear.m, regresiLinear.b);
+  const plotRegresi = LinearRegressionGraph(diameterArray, regresiLinear.m, regresiLinear.b);
   
   function Graphing({variasi}){
-    const scatter = DatasetsY('Udara','scatter',dataObjek.y,'blue','blue')
-    const line = DatasetsY('Regresi Udara','line', grafikRegresi.y,'red','red')
+    const grafikData = DatasetsY('Udara','scatter',dataObjek.y,'blue','blue')
+    const grafikRegresi = DatasetsY('Regresi Udara','line', plotRegresi.y,'red','red')
     
     const Datasets = {
-      x : grafikRegresi.x,
-      y : [scatter,line]
+      x : plotRegresi.x,
+      y : [grafikData,grafikRegresi]
     }
     console.log(Datasets.y)
     const PlotGrafik = <PlotGraph title={variasi} datasetsX={Datasets.x} datasetsY={Datasets.y}/>
