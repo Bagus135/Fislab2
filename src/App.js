@@ -1,10 +1,8 @@
 import './App.css';
 import NoRoutes from './URLpath/noRoute';
-import LineChart from './component/rand';
 import Home from './URLpath/home';
-import { registerCharts } from './chartJS/chart';
+import LineChart from './chartJS/chart';
 import { Route, Routes, BrowserRouter} from 'react-router-dom';
-registerCharts();
 
 function App() {
   return (
