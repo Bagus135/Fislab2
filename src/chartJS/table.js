@@ -1,10 +1,10 @@
 // Ini adalah file template untuk membuat tabel di HTML 
-function Table(Header, Data,) {
-    mapingHeader = Header.map((value,index)=>{
+function Tabel({Header, Data}) {
+   const mapingHeader = Header.map((value,index)=>{
         return(<th key={index} >{value}</th>)
     });
-    mapingData = Data.map((row,index)=>{
-       mapingRow = row.map((value,index) =>{
+   const mapingData = Data.map((row,index)=>{
+       const mapingRow = row.map((value,index) =>{
         return (
             <td key={index}>{value}</td>
         )
@@ -12,7 +12,7 @@ function Table(Header, Data,) {
        return (
         <tr>{mapingRow}</tr>
        )
-    })
+    });
 return(
     <table>
         <tr>{mapingHeader}</tr>
@@ -21,4 +21,4 @@ return(
 )
 }
 
-export default Table
+export default Tabel

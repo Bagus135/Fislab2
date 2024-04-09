@@ -1,6 +1,8 @@
 // Ini merupakan module npm yang dibutuhkan (import module)
 import { Chart} from 'react-chartjs-2';
-import T
+import Table from '../chartJS/table.js';
+
+
 var ss = require('simple-statistics');
 // Fungsi convert piksel
 function perbesaran(referensi_x, referensi_y, diameter_x, diameter_y){
@@ -50,5 +52,6 @@ function grafikregresiLinear(inputData, gradient, interceps){
 }
 
 // Fungsi untuk membuat tabel
+
 
     
