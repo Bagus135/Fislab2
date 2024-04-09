@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/waves-5' element={<Udara1/>}/>
-        <Route path='/waves-1' element={<Plotly/>}/>
+        <Route path='/waves-2' element={<Plotly/>}/>
         <Route path='*' element={<NoRoutes/>}/>
       </Routes>
       </BrowserRouter>
