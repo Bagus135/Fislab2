@@ -1,7 +1,7 @@
 // Ini merupakan module npm yang dibutuhkan (import module)
 import { Chart} from 'react-chartjs-2';
+import T
 var ss = require('simple-statistics');
-
 // Fungsi convert piksel
 function perbesaran(referensi_x, referensi_y, diameter_x, diameter_y){
     let referensi = (referensi_x**2 + referensi_y**2)**0.5;
