@@ -255,6 +255,7 @@ function Grafik(){
 function W5(){
   return(
     <>
+    <p>Bagus Mustaqim/5001221060/14</p>
     <TabelPengukuran/>
     <br/>
     <br/>
