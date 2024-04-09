@@ -1,8 +1,7 @@
 import './App.css';
 import NoRoutes from './URLpath/noRoute';
 import Home from './URLpath/home';
-import Udara1 from './component/rand';
-import { Plotly } from './chartJS/table';
+import W5 from './component/W5';
 import { Route, Routes, BrowserRouter} from 'react-router-dom';
 
 
@@ -11,8 +10,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/waves-5' element={<Udara1/>}/>
-        <Route path='/waves-2' element={<Plotly/>}/>
+        <Route path='/waves-5' element={<W5/>}/>
         <Route path='*' element={<NoRoutes/>}/>
       </Routes>
       </BrowserRouter>
