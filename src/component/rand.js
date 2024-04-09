@@ -85,7 +85,7 @@ function Execution({variasi, referensi_x, referensi_y, diameter_x, diameter_y}){
   return <Graphing variasi={variasi}/>
 }
 
-function Udara1(){
+const Udara1 = ()=>{
 return (<Execution variasi= {'Grafik Udara 1'} referensi_x={2} referensi_y={4} diameter_x={[1,2,3,4,5]} diameter_y={[2,4,12,5,10]}/>)
 }
 
