@@ -1,5 +1,5 @@
 import { Chart } from 'react-chartjs-2';
-import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, Title, Legend, CategoryScale} from 'chart.js/auto';
+import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, Title, Legend,  CategoryScale} from 'chart.js/auto';
 
 ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title, Legend, CategoryScale);
 
@@ -14,9 +14,23 @@ export function DatasetsY(label,type,data,borderColor,backgroundColor){
   return datasetsObj
 }; 
 
-export function PlotGraph({title, datasetsY, datasetsX}) {
+export function PlotGraph({title, titleX, titleY, datasetsY, datasetsX}) {
   const options = {
     responsive: true,
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: titleX
+        }
+      },
+      y: {
+        title: {
+          display: true,
+          text: titleY
+        }
+      }
+    },
     plugins: {
       legend: {
         display : true,

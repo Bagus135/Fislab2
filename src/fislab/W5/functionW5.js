@@ -80,7 +80,7 @@ export function Graphing({variasi, dataObjek, plotRegresi}){
     x : dataObjek.x,
     y : [grafikData,grafikRegresi]
   }
-  const PlotGrafik = <PlotGraph title={variasi} datasetsX={Datasets.x} datasetsY={Datasets.y}/>
+  const PlotGrafik = <PlotGraph title={variasi} titleX={"Orde"} titleY={'d^2 (meter^2)'} datasetsX={Datasets.x} datasetsY={Datasets.y}/>
   return  PlotGrafik
 }
 
