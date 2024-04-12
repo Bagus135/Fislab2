@@ -1,5 +1,5 @@
 import { Tabel } from "../../component/table";
-import fluxData from "./dataMP2";
+import {fluxData} from "./dataMP2";
 
 function Layout(title, height){
   let layout = {
@@ -22,5 +22,6 @@ function TabelFlux(){
        </div>
      )
 }
+
 
 export default TabelFlux

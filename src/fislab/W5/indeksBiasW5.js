@@ -15,14 +15,18 @@ function indexFormula(diameterUdara, diameter1, diameter2){
         varOrde = i + 1;
         orde.push(varOrde)
         var1 = diameterUdara[i]/diameter1[i];
+        var1 = parseFloat(var1.toFixed(3))
         n1.push(var1);
-        var2 = diameterUdara[i]/diameter2[i]
+        var2 = diameterUdara[i]/diameter2[i];
+        var2 = parseFloat(var2.toFixed(3))
         n2.push(var2);
     }
 
     // Cari Rata-ratanya
-    const rata1 = ss.mean(n1); 
-    const rata2 = ss.mean(n2);
+    let rata1 = ss.mean(n1);
+    rata1 = parseFloat(rata1.toFixed(3)) 
+    let rata2 = ss.mean(n2);
+    rata2 = parseFloat(rata2.toFixed(3))
     orde.push('Rata-Rata'); n1.push(rata1); n2.push(rata2)
 
     return [orde,n1,n2]

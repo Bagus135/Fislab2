@@ -9,6 +9,12 @@ let fluxData = {
     mean :[],
 }
 
+const fizeauFocaultData = {
+    Length : 8633,
+    n : 720,
+    V_angular : 75
+}
+
 // Cari Rata2 nya
 const rata2lt1 = parseFloat(ss.mean(fluxData.lt1).toFixed(3))
 const rata2lt2 = parseFloat(ss.mean(fluxData.lt2).toFixed(3))
@@ -24,4 +30,4 @@ fluxData.pengulangan.push("Rata - Rata");
 // Tambah array mean pada objek fluxData
 const Mean = [rata2lt1,rata2lt2,rata2lt3,rata2lt4];
 fluxData.mean.push(...Mean)
-export default fluxData
+export {fluxData, fizeauFocaultData}

@@ -1,5 +1,5 @@
 import { PlotGraph,DatasetsY } from "../../component/chart"
-import fluxData from "./dataMP2"
+import {fluxData} from "./dataMP2"
 
 function GrafikFlux(){
     const grafikData = DatasetsY('Muon Flux','line',fluxData.mean,'blue','blue')

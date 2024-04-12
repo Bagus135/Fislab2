@@ -20,7 +20,7 @@ function TabelPengukuran(){
      function TabelUdara1(){
        return (
          <div className='TabelUdara1'>
-          <Tabel layout={Layout('Udara 1',270)} header={['Orde', 'diameter_x (px)', 'diameter_y (px)', 'diameter_asli (m)']} data={[Udara1.dataObjek.x, DataUdara1.diameter_x, DataUdara1.diameter_y, Udara1.dataObjek.y] }/>
+          <Tabel layout={Layout('Udara 1',270)} header={['Orde', 'diameter_x (px)', 'diameter_y (px)', 'diameter_asli (mm)']} data={[Udara1.dataObjek.x, DataUdara1.diameter_x, DataUdara1.diameter_y, Udara1.dataObjek.DataTabel] }/>
           <p> Referensi 1 mm = {Udara1.referensi_1mm}px</p>
          </div>
        )
@@ -28,7 +28,7 @@ function TabelPengukuran(){
      function TabelUdara2(){
        return (
          <div className='TabelUdara2'>
-          <Tabel layout={Layout('Udara 2',270)} header={['Orde', 'diameter_x (px)', 'diameter_y (px)', 'diameter_asli (m)']} data={[Udara2.dataObjek.x, DataUdara2.diameter_x, DataUdara2.diameter_y, Udara2.dataObjek.y] }/>
+          <Tabel layout={Layout('Udara 2',270)} header={['Orde', 'diameter_x (px)', 'diameter_y (px)', 'diameter_asli (mm)']} data={[Udara2.dataObjek.x, DataUdara2.diameter_x, DataUdara2.diameter_y, Udara2.dataObjek.DataTabel] }/>
            <p> Referensi 1 mm = {Udara2.referensi_1mm}px</p>
          </div>
        )
@@ -36,7 +36,7 @@ function TabelPengukuran(){
      function TabelUdara3(){
        return (
          <div className='TabelUdara3'>
-           <Tabel layout={Layout('Udara 3',270)} header={['Orde', 'diameter_x (px)', 'diameter_y (px)', 'diameter_asli (m)']} data={[Udara3.dataObjek.x, DataUdara3.diameter_x, DataUdara3.diameter_y, Udara3.dataObjek.y] }/>
+           <Tabel layout={Layout('Udara 3',270)} header={['Orde', 'diameter_x (px)', 'diameter_y (px)', 'diameter_asli (mm)']} data={[Udara3.dataObjek.x, DataUdara3.diameter_x, DataUdara3.diameter_y, Udara3.dataObjek.DataTabel] }/>
            <p> Referensi 1 mm = {Udara3.referensi_1mm}px</p>
          </div>
        )
@@ -44,7 +44,7 @@ function TabelPengukuran(){
      function TabelAir(){
        return (
          <div className='TabelAir'>
-          <Tabel layout={Layout('Air',270)} header={['Orde', 'diameter_x (px)', 'diameter_y (px)', 'diameter_asli (m)']} data={[Air.dataObjek.x, DataAir.diameter_x, DataAir.diameter_y, Air.dataObjek.y] }/>
+          <Tabel layout={Layout('Air',270)} header={['Orde', 'diameter_x (px)', 'diameter_y (px)', 'diameter_asli (mm)']} data={[Air.dataObjek.x, DataAir.diameter_x, DataAir.diameter_y, Air.dataObjek.DataTabel] }/>
           <p> Referensi 1 mm = {Air.referensi_1mm}px</p>
          </div>
        )
@@ -52,7 +52,7 @@ function TabelPengukuran(){
      function TabelLarutanGula(){
        return (
          <div className='TabelLarutanGula'>
-          <Tabel layout={Layout('LarutanGula',270)} header={['Orde', 'diameter_x (px)', 'diameter_y (px)', 'diameter_asli (m)']} data={[LarutanGula.dataObjek.x, DataLarutanGula.diameter_x, DataLarutanGula.diameter_y, LarutanGula.dataObjek.y] }/>
+          <Tabel layout={Layout('LarutanGula',270)} header={['Orde', 'diameter_x (px)', 'diameter_y (px)', 'diameter_asli (mm)']} data={[LarutanGula.dataObjek.x, DataLarutanGula.diameter_x, DataLarutanGula.diameter_y, LarutanGula.dataObjek.DataTabel] }/>
           <p> Referensi 1 mm = {LarutanGula.referensi_1mm}px</p>
          </div>
        )

@@ -1,4 +1,3 @@
-import './App.css';
 import NoRoutes from './URLpath/noRoute';
 import Home from './URLpath/home';
 import { Route, Routes, BrowserRouter} from 'react-router-dom';

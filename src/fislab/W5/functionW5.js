@@ -23,21 +23,42 @@ function perbesaran(diameter_x, diameter_y, referensi_1mm){
   
 //Fungsi membuat sebuah data menjadi objek
 function dataObj(dataInput){
+  // properti x merupakan orde
+  // properti y merupakan data yang digunakan dalam pengolahan data
+  // properti Array Multi merupakan data yang digunakan dalam mencari regresi linearnya
+  // variabel Data Tabel merupakan data pembulatan yang digunakan untuk visualisasi pada tabel
+  // variabel Data Tabel merupakan data pembulatan yang digunakan untuk visualisasi pada grafik
     let data = {
         x : [],
         y : [],
         arrayMulti : [],
+        DataTabel : [],
+        DataGrafik : []
     };
+    let Diameter = 0;
     let diameter_kuadrat = 0
     let space = 0;
     for(let i = 0; i < dataInput.length; i++){
+        // data yang digunakan pada pengolahan data
         data.x.push(i+1)
         diameter_kuadrat = (dataInput[i])**2
         data.y.push(diameter_kuadrat) // diameter dikuadratkan
+
+        // Array multidementional untuk regresi
         space = [i+1,diameter_kuadrat]
         data.arrayMulti.push(space)
+
+        // data untuk visusalisasi tabel
+        Diameter = dataInput[i]*(10**3) // jadikan ke milimeter
+        Diameter = Diameter.toFixed(4) // bulatkan menjadi 4 angka dibelakang koma
+        data.DataTabel.push(Diameter)
+      
+        // data untuk visualisasi grafik
+        diameter_kuadrat = diameter_kuadrat*(10**6) // Agar terdapat satu angka didepan koma
+        diameter_kuadrat = parseFloat(diameter_kuadrat.toFixed(2))
+        data.DataGrafik.push(diameter_kuadrat)
     }
-    return data;
+    return data
 }
 
 // Fungsi mencari regresi linear
@@ -55,6 +76,8 @@ function LinearRegressionGraph(inputData, gradient, interceps){
     let titik = 0;
     for(let i = 1; i <= inputData.length; i++){
         titik = gradient*i + interceps
+        titik = titik*(10**6) // agar terdapat satu angka didepan koma
+        titik = parseFloat(titik.toFixed(2)) // bulatkan menjadi 2 angka di belakang koma
         MatriksKosong.y.push(titik)
         MatriksKosong.x.push(i)
     }
@@ -73,14 +96,14 @@ export function Execution(referensi_x, referensi_y, diameter_x, diameter_y){
 
 
 export function Graphing({variasi, dataObjek, plotRegresi}){
-  const grafikData = DatasetsY('Udara','scatter',dataObjek.y,'blue','blue')
+  const grafikData = DatasetsY('Udara','scatter',dataObjek.DataGrafik,'blue','blue')
   const grafikRegresi = DatasetsY('Regresi Udara','line', plotRegresi.y,'red','red')
   
   const Datasets = {
     x : dataObjek.x,
     y : [grafikData,grafikRegresi]
   }
-  const PlotGrafik = <PlotGraph title={variasi} titleX={"Orde"} titleY={'d^2 (meter^2)'} datasetsX={Datasets.x} datasetsY={Datasets.y}/>
+  const PlotGrafik = <PlotGraph title={variasi} titleX={"Orde"} titleY={'Diameter Kuadrat .10^-7 (meter^2)'} datasetsX={Datasets.x} datasetsY={Datasets.y}/>
   return  PlotGrafik
 }
 
