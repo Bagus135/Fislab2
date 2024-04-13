@@ -2,6 +2,7 @@ import { Tabel } from "../../component/table"
 import { Udara1,Udara2,Udara3,Air,LarutanGula,DataUdara1,DataUdara2,DataUdara3,DataAir,DataLarutanGula} from "./dataW5"
 import { LambdaW5} from "./lambdaW5"
 import {IndeksBiasW5} from "./indeksBiasW5"
+var ss = require('simple-statistics')
 
 function Layout(title, height){
   let layout = {
@@ -78,10 +79,11 @@ function TabelLambda(){
   const lambda3 = lambdaW5.lambdaUdara3*(10**9);
   const lambda4 = lambdaW5.lambdaAir*(10**9);
   const lambda5 = lambdaW5.lambdaLarutanGula*(10**9);
+  const rata2 =  ss.mean([lambda1,lambda2,lambda3,lambda4,lambda5])
   
     return (
        <div className='Tabellambda'>
-        <Tabel layout={Layout('Panjang Gelombang',170)} header={['Variasi', decodeURI('%CE%BB')+'(nm)']} data={[['Udara 1', 'Udara 2', 'Udara 3', 'Air', 'Larutan Gula'], [lambda1,lambda2,lambda3, lambda4, lambda5]]} />
+        <Tabel layout={Layout('Panjang Gelombang',190)} header={['Variasi', decodeURI('%CE%BB')+'(nm)']} data={[['Udara 1', 'Udara 2', 'Udara 3', 'Air', 'Larutan Gula', "Rata-rata"], [lambda1,lambda2,lambda3, lambda4, lambda5, rata2]]} />
        </div>
      )
 }
