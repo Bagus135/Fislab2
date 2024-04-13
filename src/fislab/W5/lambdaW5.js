@@ -2,7 +2,7 @@ import { Udara1,Udara2,Udara3,Air,LarutanGula} from "./dataW5"
 import { MathJax } from "better-react-mathjax";
 
 function lambdaFormula(slope){
-    const ringDiameter = 3.4; //meter
+    const ringDiameter = 0.84; //meter
     let lambda = slope/(4*ringDiameter);
     return lambda
 }

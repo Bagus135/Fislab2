@@ -5,8 +5,8 @@ import { Execution } from "./functionW5";
 const DataUdara1 ={
     referensi_x : 435,
     referensi_y : 841,
-    diameter_x:[158,262,334,496,450,496,540,578,620,656],
-    diameter_y : [4,44,60,78,84,92,98,104,112,114],
+    diameter_x:[158,262,334,450,496,496,540,578,620,656],
+    diameter_y : [4,44,60,84,78,92,98,104,112,114],
    }
  const Udara1 = Execution(DataUdara1.referensi_x, DataUdara1.referensi_y,DataUdara1.diameter_x,DataUdara1.diameter_y);
  
