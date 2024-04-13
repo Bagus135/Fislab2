@@ -18,9 +18,9 @@ const DataSenar = {
 const DataW1 = {
     IndexBias : RefractionIndex(DataSnellius.theta1, DataSnellius.theta2),
     Lambda : {
-        _100mm : Difraction((1/100)/1000, DataRefraksi.x100mm),
-        _300mm : Difraction((1/300)/1000, DataRefraksi.x300mm),
-        _600mm : Difraction((1/600)/1000, DataRefraksi.x600mm),
+        _100mm : Difraction((2/100)/1000, DataRefraksi.x100mm),
+        _300mm : Difraction((2/300)/1000, DataRefraksi.x300mm),
+        _600mm : Difraction((2/600)/1000, DataRefraksi.x600mm),
     },
     DiameterSenar : DiameterString(DataSenar.x), 
 }
