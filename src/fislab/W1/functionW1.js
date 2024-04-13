@@ -29,7 +29,7 @@ function RefractionIndex(tethas1, tethas2){
 }; 
 
 function DiffractionFormula(d, x , n) {
-    const l = 0.25;
+    const l = 0.3; // meter
     const lambda = d*x/(n*(l**2 + x**2)**0.5)
     return lambda  
 }
