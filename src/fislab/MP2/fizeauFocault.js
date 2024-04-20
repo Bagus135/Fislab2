@@ -5,6 +5,7 @@ function fizeauFocault(L, n , V_angular){
     return c
 }
 
-const c = fizeauFocault(fizeauFocaultData.Length,fizeauFocaultData.n,fizeauFocaultData.V_angular);
+const c = fizeauFocault(fizeauFocaultData.Length[0],fizeauFocaultData.n[0],fizeauFocaultData.V_angular[0]);
+const c2 = fizeauFocault(fizeauFocaultData.Length[1],fizeauFocaultData.n[1],fizeauFocaultData.V_angular[1])
 
-export {c}
+export {c, c2}

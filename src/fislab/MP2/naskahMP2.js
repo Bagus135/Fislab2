@@ -1,4 +1,4 @@
-import {c} from "./fizeauFocault";
+import {c, c2} from "./fizeauFocault";
 import { MathJax } from "better-react-mathjax";
 
 function Header(){
@@ -36,7 +36,10 @@ function FizeauFocaultScript(){
             <p>{`\\(c = \\frac{2 . 8633 . 720 . 75}{3.14}\\)`}</p>
             <p>{`\\(c = ${c} m/s\\)`}</p>
             <p>{`\\(c = 2.967 . 10^8 m/s\\)`}</p>
+            <p>{c}</p>
+            <p>{c2}</p>
             </MathJax>
+            
         </div>    
     )
 }

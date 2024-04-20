@@ -3,22 +3,33 @@ import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScal
 
 ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title, Legend, CategoryScale);
 
-export function DatasetsY(label,type,data,borderColor,backgroundColor){
+ function datasets(label,type,dataX,dataY,borderColor,backgroundColor,tension){
+  const dataArray = [];
+  let x = 0; let y = 0;
+
+  for(let i = 0; i<dataX.length; i++){
+    x = dataX[i];
+    y = dataY[i];
+    dataArray.push({x ,y})
+  }
+
   const datasetsObj = {
     label,
     type,
-    data,
+    data : dataArray,
     borderColor,
     backgroundColor,
+    tension,
   }
   return datasetsObj
 }; 
 
-export function PlotGraph({title, titleX, titleY, datasetsY, datasetsX}) {
+ function PlotGraph({title, titleX, titleY, datasets}) {
   const options = {
     responsive: true,
     scales: {
       x: {
+        type:'linear',
         title: {
           display: true,
           text: titleX
@@ -44,10 +55,9 @@ export function PlotGraph({title, titleX, titleY, datasetsY, datasetsX}) {
   }
 
   const data = {
-    labels : datasetsX,
-    datasets: datasetsY,
+   datasets
   }
 
   return <Chart options={options} data={data} />
 }
-
+export {datasets,PlotGraph}

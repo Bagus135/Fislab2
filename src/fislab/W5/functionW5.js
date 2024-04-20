@@ -1,5 +1,5 @@
 // Ini merupakan module npm yang dibutuhkan (import module)
-import { PlotGraph, DatasetsY } from '../../component/chart.js';
+import { PlotGraph, datasets } from '../../component/chart.js';
 var ss = require('simple-statistics');
 
 // Fungsi convert piksel
@@ -10,8 +10,8 @@ function perbesaran_1mm(referensi_x, referensi_y){
   }
   
 function perbesaran(diameter_x, diameter_y, referensi_1mm){
-  let diameter = 0;
-  let diameter_asli = 0;
+  let diameter = 0; // tempat sementara untuk menyimpan nilai diameter cincin dalam satuan px
+  let diameter_asli = 0; // tempat sementara untuk menyimpan nilai diameter cincin dalam satuan m
   let diameterArray = []; 
   for(let i = 0; i<diameter_x.length; i++){
     diameter = (diameter_x[i]**2 + diameter_y[i]**2)**0.5;
@@ -96,14 +96,11 @@ export function Execution(referensi_x, referensi_y, diameter_x, diameter_y){
 
 
 export function Graphing({variasi, dataObjek, plotRegresi}){
-  const grafikData = DatasetsY('Udara','scatter',dataObjek.DataGrafik,'blue','blue')
-  const grafikRegresi = DatasetsY('Regresi Udara','line', plotRegresi.y,'red','red')
+  const grafikData = datasets('Udara','scatter',dataObjek.x,dataObjek.DataGrafik,'blue','blue')
+  const grafikRegresi = datasets('Regresi Udara','line',dataObjek.x, plotRegresi.y,'red','red')
   
-  const Datasets = {
-    x : dataObjek.x,
-    y : [grafikData,grafikRegresi]
-  }
-  const PlotGrafik = <PlotGraph title={variasi} titleX={"Orde"} titleY={'Diameter Kuadrat .10^-7 (meter^2)'} datasetsX={Datasets.x} datasetsY={Datasets.y}/>
+
+  const PlotGrafik = <PlotGraph title={variasi} titleX={"Orde"} titleY={'Diameter Kuadrat .10^-6 (meter^2)'} datasets={[grafikData,grafikRegresi]}/>
   return  PlotGrafik
 }
 

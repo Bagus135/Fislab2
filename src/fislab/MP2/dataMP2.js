@@ -10,9 +10,9 @@ let fluxData = {
 }
 
 const fizeauFocaultData = {
-    Length : 8633,
-    n : 720,
-    V_angular : 75
+    Length : [5000,8633],
+    n : [500,720],
+    V_angular : [190,75]
 }
 
 // Cari Rata2 nya
