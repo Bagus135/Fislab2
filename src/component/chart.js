@@ -3,7 +3,7 @@ import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScal
 
 ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title, Legend, CategoryScale);
 
- function datasets(label,type,dataX,dataY,borderColor,backgroundColor,){
+ function datasets(label,type,dataX,dataY,borderColor,backgroundColor,tension){
   const dataArray = [];
   let x = 0; let y = 0;
 
@@ -19,6 +19,7 @@ ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title, 
     data : dataArray,
     borderColor,
     backgroundColor,
+    tension,
   }
   return datasetsObj
 }; 
