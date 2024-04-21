@@ -33,14 +33,15 @@ function lambdaMP5(panjangArray, gratingConstant){
     const l = 0.2
     const lambdaArray = [];
     const xArray = []
-    let lambda = 0; let x = 0; let d = gratingConstant 
+    let lambda = 0; let x = 0; let xMeter = 0; let d = gratingConstant 
 
     
     for(let i = 0; i < panjangArray.length; i++){
-        x = panjangArray[i]*100 // rubah ke cm
-        x = parseFloat(x.toFixed(3)) // bulatkan 3 angka dibelakang koma
-        xArray.push(x);
+        xMeter = panjangArray[i]*100 // rubah ke cm
+        xMeter = parseFloat(xMeter.toFixed(3)) // bulatkan 3 angka dibelakang koma
+        xArray.push(xMeter);
 
+        x = panjangArray[i];
         lambda = equation(x,d,l);
         lambda = lambda*10**9; // rubah ke nm
         lambda = parseFloat(lambda.toFixed(3)) // bulatkan 3 angka di belakang koma
