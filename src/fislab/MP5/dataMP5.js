@@ -101,16 +101,19 @@ const nHidrogen = RefractiveIndex(DataSpectrometer.hidrogen.sudut)
 const DataKisiMP5 = {
     helium : {
         kisi100mm:{
+            x_px : helium100mm.panjangX.dataPx,
             skala1cm: helium100mm.skala1cm,
             x : helium100mm.lambda.xArray,
             lambda : helium100mm.lambda.lambdaArray, 
         },
         kisi300mm:{
+            x_px : helium300mm.panjangX.dataPx,
             skala1cm: helium300mm.skala1cm,
             x : helium300mm.lambda.xArray,
             lambda : helium300mm.lambda.lambdaArray, 
         },
         kisi600mm:{
+            x_px : helium600mm.panjangX.dataPx,
             skala1cm: helium600mm.skala1cm,
             x : helium600mm.lambda.xArray,
             lambda : helium600mm.lambda.lambdaArray, 
@@ -118,16 +121,19 @@ const DataKisiMP5 = {
     },
     neon : {
         kisi100mm:{
+            x_px : neon100mm.panjangX.dataPx,
             skala1cm: neon100mm.skala1cm,
             x : neon100mm.lambda.xArray,
             lambda : neon100mm.lambda.lambdaArray, 
         },
         kisi300mm:{
+            x_px : neon300mm.panjangX.dataPx,
             skala1cm: neon300mm.skala1cm,
             x : neon300mm.lambda.xArray,
             lambda : neon300mm.lambda.lambdaArray, 
         },
         kisi600mm:{
+            x_px : neon600mm.panjangX.dataPx,
             skala1cm: neon600mm.skala1cm,
             x : neon600mm.lambda.xArray,
             lambda : neon600mm.lambda.lambdaArray, 
@@ -135,16 +141,19 @@ const DataKisiMP5 = {
     },
     hidrogen : {
         kisi100mm:{
+            x_px : hidrogen100mm.panjangX.dataPx,
             skala1cm: hidrogen100mm.skala1cm,
             x : hidrogen100mm.lambda.xArray,
             lambda : hidrogen100mm.lambda.lambdaArray, 
         },
         kisi300mm:{
+            x_px : hidrogen300mm.panjangX.dataPx,
             skala1cm: hidrogen300mm.skala1cm,
             x : hidrogen300mm.lambda.xArray,
             lambda : hidrogen300mm.lambda.lambdaArray, 
         },
         kisi600mm:{
+            x_px : hidrogen600mm.panjangX.dataPx,
             skala1cm: hidrogen600mm.skala1cm,
             x : hidrogen600mm.lambda.xArray,
             lambda : hidrogen600mm.lambda.lambdaArray, 

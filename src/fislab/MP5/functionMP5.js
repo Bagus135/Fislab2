@@ -13,15 +13,21 @@ function perbesaran(data, referensi_1cm){
   let panjang = 0; // tempat sementara untuk menyimpan nilai panjang titikcerahtengah-warna dalam satuan px
   let panjang_asli = 0; // tempat sementara untuk menyimpan nilai panjang x dalam satuan m
   let panjangArray = [];
-   
+  
+  let string;
+  const dataPx =[]
   for(let i = 0; i<data.length; i++){
     x = data[i][0];
-    y = data[i][1]
+    y = data[i][1];
+
+    string = `${x} x ${y}`
+    dataPx.push(string);
+
     panjang = (x**2 + y**2)**0.5;
     panjang_asli = (panjang/referensi_1cm)*0.01;
     panjangArray.push(panjang_asli)
   }
-  return panjangArray;
+  return {panjangArray, dataPx};
 }
 
 function lambdaMP5(panjangArray, gratingConstant){
@@ -53,7 +59,7 @@ function lambdaMP5(panjangArray, gratingConstant){
 function ExecutionGrating(dataVariasi){
   const skala1cm = perbesaran_1cm(dataVariasi.referensi_1cm);
   const panjangX = perbesaran(dataVariasi.x, skala1cm);
-  const lambda = lambdaMP5(panjangX, dataVariasi.d)
+  const lambda = lambdaMP5(panjangX.panjangArray, dataVariasi.d)
   return {skala1cm,panjangX,lambda}
 };
 
