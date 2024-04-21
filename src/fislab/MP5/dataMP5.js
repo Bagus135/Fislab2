@@ -58,7 +58,7 @@ const DataKisiMentah = {
         kisi600mm :{
             warna:['Merah', 'Biru'],
             referensi_1cm: [211,2],
-            x : [[1383,287],[983,175]],
+            x : [[1277,49],[929,23]],
             d : (2/600)/1000
         },
     },
